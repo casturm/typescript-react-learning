@@ -9,3 +9,5 @@ https://reactjs.org/docs/hello-world.html
 
 https://charleslbryant.gitbooks.io/hello-react-and-typescript/content/
 
+# how to complile
+npm run build

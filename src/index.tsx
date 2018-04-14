@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Hello } from "./components/Hello";
 import { Ticker } from "./components/Ticker";
 import { Toggle } from "./components/Toggle";
+import { BootstrapModal } from "./components/BootstrapModal";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hello name="World!" />
       <Ticker />
       <Toggle />
+      <BootstrapModal />
     </div>
   );
 }
