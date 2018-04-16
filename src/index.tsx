@@ -5,6 +5,8 @@ import { Hello } from "./components/Hello";
 import { Ticker } from "./components/Ticker";
 import { Toggle } from "./components/Toggle";
 import { BootstrapModal } from "./components/BootstrapModal";
+import { SaveAndReturnModal } from "./components/SaveAndReturnModal";
+import { SaveAndReturnSFCModal } from "./components/SaveAndReturnSFCModal";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Ticker />
       <Toggle />
       <BootstrapModal />
+      <SaveAndReturnModal text="save and return?" />
+      <SaveAndReturnSFCModal text="save and return with SFC?" />
     </div>
   );
 }
