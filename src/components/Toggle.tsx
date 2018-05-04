@@ -17,7 +17,7 @@ export class Toggle extends React.Component<any, any> {
 
   render() {
     return (
-      <button onClick={ this.handleClick }>
+      <button className="btn btn-primary btn-huge" type="button" onClick={ this.handleClick }>
         {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
     );

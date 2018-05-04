@@ -6,7 +6,7 @@ import { Ticker } from "./components/Ticker";
 import { Toggle } from "./components/Toggle";
 import { BootstrapModal } from "./components/BootstrapModal";
 import { SaveAndReturnModal } from "./components/SaveAndReturnModal";
-import { SaveAndReturnSFCModal } from "./components/SaveAndReturnSFCModal";
+import { ParentWithState } from "./components/ParentWithState";
 
 function App() {
   return (
@@ -14,9 +14,7 @@ function App() {
       <Hello name="World!" />
       <Ticker />
       <Toggle />
-      <BootstrapModal />
-      <SaveAndReturnModal text="save and return?" />
-      <SaveAndReturnSFCModal text="save and return with SFC?" />
+      <ParentWithState />
     </div>
   );
 }
