@@ -41,10 +41,8 @@ export class ParentWithState extends React.Component<any, any> {
 
   render() {
     return (
-      <div>
-        <SaveAndReturnSFCModal linkText="click me" email={this.state.email} emailValidationMessage={this.state.emailValidationMessage}
+      <SaveAndReturnSFCModal linkText="click me" email={this.state.email} emailValidationMessage={this.state.emailValidationMessage}
           quoteNumber="123" onChange={this.handleChange} onSave={this.handleSave} />
-      </div>
     );
   }
 }

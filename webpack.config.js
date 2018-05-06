@@ -1,15 +1,42 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = {
   mode: "development",
 
-  entry: "./src/index.tsx",
-
-  output: {
-    filename: "bundle.js",
-    path: __dirname + "/build"
+  entry: {
+    app: "./src/index.tsx"
   },
 
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
+  plugins: [
+    new CleanWebpackPlugin(['build']),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('html-webpack-template'),
+      title: 'Output Management',
+      appMountId: 'root',
+      mobile: true,
+      lang: 'en-US',
+      headHtmlSnippet: '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">',
+      scripts: [
+        'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js",
+        "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      ],
+    })
+  ],
+
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname + "/build")
+  },
+
+  devtool: "inline-source-map",
+
+  devServer: {
+    contentBase: './build'
+  },
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
@@ -24,14 +51,5 @@ module.exports = {
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
-  },
-
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
   },
 };
