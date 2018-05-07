@@ -1,17 +1,19 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 
 import { Hello } from "./components/Hello";
 import { Navbar } from "./components/Navbar";
 import { Ticker } from "./components/Ticker";
 import { ParentWithState } from "./components/ParentWithState";
 
+const NavbarWithRouter = withRouter(Navbar as any);
+
 function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar />
+        <NavbarWithRouter />
         <div className="container">
           <div className="row">
             <div className="col">

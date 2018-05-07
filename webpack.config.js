@@ -14,7 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),
-      title: 'Output Management',
+      title: 'ReactLearning',
       appMountId: 'root',
       mobile: true,
       lang: 'en-US',
