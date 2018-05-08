@@ -40,7 +40,7 @@ export class Ticker extends React.Component<any, any> {
 
   render() {
     return <div className="card" style={{width: "18rem"}}>
-        <img className="card-img-top" src="hour-glass.png" alt="sands of time"></img>
+        <img className="card-img-top" src={require("../../hour-glass.png")} alt="sands of time"></img>
         <div className="card-body">
           <h5 className="card-title">Sands of Time</h5>
           <p className="card-text">Where does the time go?</p>

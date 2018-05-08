@@ -16,7 +16,7 @@ function App() {
         <NavbarWithRouter />
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-3">
               <div className="card">
                 <div className="card-body">
                   <ul>
@@ -27,13 +27,13 @@ function App() {
                 </div>
               </div>
             </div>
-            <Route exact={true} path="/" render={() => (
-              <div className="col-4">
+            <div className="col">
+              <Route exact={true} path="/" render={() => (
                 <Hello name="World!" />
-              </div>
-            )}/>
-            <Route exact path="/clock" component={Ticker} />
-            <Route path="/modal" component={ParentWithState} />
+              )}/>
+              <Route exact path="/clock" component={Ticker} />
+              <Route path="/modal" component={ParentWithState} />
+            </div>
           </div>
         </div>
       </div>
